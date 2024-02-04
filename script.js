@@ -10,12 +10,12 @@ function sendNotification() {
     
 document.addEventListener('DOMContentLoaded', function () {
     // Initial background image
-    let currentBackground = 'url("initial-background.jpg")';
+    let currentBackground = url('images/initial-background.jpg');
 
     // Button click event
     document.getElementById('changeButton').addEventListener('click', function () {
         // Change background image
-        document.body.style.backgroundImage = 'url("new-background.jpg")';
+        document.body.style.backgroundImage = url('images/new-background.jpg');
 
         // Set a timeout to revert the background image after one minute (60,000 milliseconds)
         setTimeout(function () {
