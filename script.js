@@ -8,3 +8,23 @@ function sendNotification() {
         .then(data => console.log(data))
         .catch(error => console.error(error));
 }
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease; /* Transition for smooth background image change */
+}
+
+.container {
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+}
