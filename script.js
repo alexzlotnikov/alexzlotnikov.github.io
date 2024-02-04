@@ -1,34 +1,23 @@
-function sendNotification() {
-    // You can use different methods to send notifications, but for simplicity, we'll use an alert.
-    alert('Alex misses you too!');
-
-    // Make an API call to your serverless function.
-    fetch('/.netlify/functions/notify')
-        .then(response => response.json())
-        .then(data => console.log(data))
-        .catch(error => console.error(error));
-    
 document.addEventListener('DOMContentLoaded', function () {
     // Initial background image
-    let currentBackground = url('images/initial-background.jpg');
+    let currentBackground = 'url("images/initial-background.jpg")';
 
     // Button click event
     document.getElementById('changeButton').addEventListener('click', function () {
         // Change background image
-        document.body.style.backgroundImage = url('images/new-background.jpg');
+        document.body.style.backgroundImage = 'url("images/new-background.jpg")';
 
         // Set a timeout to revert the background image after one minute (60,000 milliseconds)
         setTimeout(function () {
             document.body.style.backgroundImage = currentBackground;
         }, 60000);
+
+        // Change button text
+        document.getElementById('changeButton').textContent = 'I miss you too!';
+
+        // Set a timeout to reset the button text after another minute (120,000 milliseconds)
+        setTimeout(function () {
+            document.getElementById('changeButton').textContent = 'I miss you!';
+        }, 120000); // 2 minutes (adjust as needed)
     });
 });
-
-.container {
-    text-align: center;
-}
-
-button {
-    padding: 10px 20px;
-    font-size: 16px;
-}
