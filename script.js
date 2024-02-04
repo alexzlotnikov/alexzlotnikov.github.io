@@ -1,7 +1,10 @@
 function sendNotification() {
     // You can use different methods to send notifications, but for simplicity, we'll use an alert.
-    alert('Leezah misses you!');
+    alert('Alex misses you too!');
 
-    // You can add code here to send a notification to your phone using a third-party service.
-    // For example, you can use services like Pushbullet, Pushover, or Firebase Cloud Messaging (FCM).
+    // Make an API call to your serverless function.
+    fetch('/.netlify/functions/notify')
+        .then(response => response.json())
+        .then(data => console.log(data))
+        .catch(error => console.error(error));
 }
