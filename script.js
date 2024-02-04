@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set a timeout to revert the background image after one minute (60,000 milliseconds)
         setTimeout(function () {
             document.body.style.backgroundImage = currentBackground;
-        }, 60000);
+        }, 10000);
 
         // Change button text
         document.getElementById('changeButton').textContent = 'I miss you too!';
@@ -18,6 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
         // Set a timeout to reset the button text after another minute (120,000 milliseconds)
         setTimeout(function () {
             document.getElementById('changeButton').textContent = 'I miss you!';
-        }, 120000); // 2 minutes (adjust as needed)
+        }, 10000); // 2 minutes (adjust as needed)
     });
 });
