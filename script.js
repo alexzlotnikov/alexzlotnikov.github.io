@@ -7,18 +7,22 @@ function sendNotification() {
         .then(response => response.json())
         .then(data => console.log(data))
         .catch(error => console.error(error));
-}
-body {
-    margin: 0;
-    padding: 0;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-size: cover;
-    background-position: center;
-    transition: background-image 1s ease; /* Transition for smooth background image change */
-}
+    
+document.addEventListener('DOMContentLoaded', function () {
+    // Initial background image
+    let currentBackground = 'url("initial-background.jpg")';
+
+    // Button click event
+    document.getElementById('changeButton').addEventListener('click', function () {
+        // Change background image
+        document.body.style.backgroundImage = 'url("new-background.jpg")';
+
+        // Set a timeout to revert the background image after one minute (60,000 milliseconds)
+        setTimeout(function () {
+            document.body.style.backgroundImage = currentBackground;
+        }, 60000);
+    });
+});
 
 .container {
     text-align: center;
